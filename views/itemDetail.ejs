@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>item details</h1>
+    <p>
+        <h3>product name: <%=item.title%></h3>
+        <h3>product description: <%=item.describe%></h3>
+        
+        <h3>product price: $<%=item.price%></h3>
+        <h3>stock available: <%=item.available%></h3>
+        <img src="<%=item.image_url%>" alt=""/>
+    </p>
+
+    <a href="/items/new">add new product</a>
+
+    <a href="/items/<%=item.id%>/edit">edit</a>
+
+    <form action="/items/<%=item.id%>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button>delete item</button>
+    </form>
+</body>
+</html>
