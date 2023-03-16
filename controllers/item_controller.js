@@ -19,7 +19,7 @@ router.get("/", (req,res)=>{
     const sql = "select * from items;"
 
     db.query(sql, (err, dbRes) =>{
-        console.log(dbRes.rows)
+        // console.log(dbRes.rows)
         const items = dbRes.rows
         // res.render("home", {dishes: dishes,email: req.session.email})
         res.render("home", {items: items})
@@ -46,10 +46,12 @@ router.post("/items",(req, res)=>{
 
 
 router.get("/items/:item_id", (req, res) =>{
-
+    
     const sql = `select * from items where id = $1;`
     //{req.params.id} sanatise the sql string
     db.query(sql,[req.params.item_id], (err,dbRes) => {
+        console.log(req.session.cart)
+        // const orderStatus = req.session.cart.length
         if (err){
             console.log(err)
 

@@ -7,13 +7,53 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hello new user</h1>
+    <style>
+        .content{
+
+            width: 240px;
+            padding: 20px;
+            margin: 300px auto 0px auto;
+            background-color: white;
+            border-radius: 5px;
+
+        }
+
+        body{
+
+            background-color: #40E4E5;
+        }
+        div{
+            margin-top: 20px;
+        }
+        div input{
+            width: 100%;
+        }
+        .button{
+
+            width: 100%;
+            text-align: center;
+            border-radius: 5px;
+            background-color: red;
+            border: 1px solid #EFEFEF;
+            color: white;
+            height: 30px;
+        }
+        .regButton{
+            background-color: white;
+            border: 0px;
+            margin-top: 5px;
+
+        }
+    </style>
+    <div class="content">
+    <h3>hello new user</h1>
         <form action="/users" method="post">
-            <lable for="">email address</lable>
+            <lable for="">username / email address</lable>
             <input type="text" name="email" />
             <label for="">password</label>
             <input type="password" name="password"/>     
-            <button>submit</button>
+            <button class="button">submit</button>
         </form>
+    </div>
 </body>
 </html>

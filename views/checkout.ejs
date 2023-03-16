@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+
+
+        section {
+            margin: 0 auto;
+            padding: 20px 10px;
+            box-sizing: border-box;
+            position: relative;
+            max-width: 1200px;
+            /* background-color: #ECE9E9FF; */
+
+
+            display: grid;
+            grid-auto-rows: auto;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            
+            text-align: center;
+
+            color: rgb(6, 245, 225);
+
+    }
+
+    .ui-card{
+        background-color: white;
+        margin: 10px;
+        padding: 10px;
+        box-shadow: 2px 2px 2px 2px #ccc;
+        /* width: 25%; */
+    
+    }
+    .ui-card img{
+        border-radius: 5px;
+        width: 100%;
+        margin-top: 15px;
+    
+    }
+
+    
+
+    section div a{
+
+        color:rgb(106, 103, 85);
+    
+    }
+    .addBtn{
+        background-color: red;
+        color: white;
+        border: 0px;
+        border-radius: 3px;
+        margin-top: 5px;
+        }
+    .removeBtn{
+        background-color: white;
+        border: 0px; 
+        margin-top: 10px;
+    }
+
+    .post{
+
+        width: 1200px;
+        margin: 0 auto;
+        padding: 50px 0px 200px 0px;
+    }
+
+    .post button{
+        width: 120px;
+        padding: 5px;
+        background-color: red;
+        color: white;
+        border: 0px;
+        border-radius: 3px;
+        margin-top: 5px;
+        margin-left: 20px;
+
+    }
+    .homepage{
+        width: 1200px;
+        margin: 0 auto;
+
+        font-size: x-large;
+    }
+    
+
+    </style>
+        <div class="homepage">
+            <a href="/"> homepage</a>
+    
+
+            <p>the total charge for this shopping is $<%=totalCharge%></p>
+        </div>
+
+    <section>
+        <% for (let item of orderLists){%>
+            <div class="ui-card">
+                <a href="/items/<%= item.id%>"><%= item.title%></a>
+                <img src="<%= item.image_url%>" />
+                <form action="/orders/<%=item.id%>/add" >
+                    <button class="addBtn">add</button>
+                </form>
+                <form action="/orders/<%=item.id%>/remove" >
+                    <button class="removeBtn">remove</button>
+                </form>
+            </div>
+        <% } %>
+    </section>
+    
+    <div class="post">
+        <form action="/orders/<%=currentUser.id%>/confirm" method="post">
+            <button>confirm</button>
+        </form>
+    </div>     
+
+</body>
+</html>

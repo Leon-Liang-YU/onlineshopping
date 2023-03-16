@@ -7,18 +7,67 @@
     <title>Document</title>
 </head>
 <body>
+    <style>
+        .content{
+
+            width: 240px;
+            padding: 20px;
+            margin: 300px auto 0px auto;
+            background-color: white;
+            border-radius: 5px;
+
+        }
+
+        body{
+
+            background-color: #40E4E5;
+        }
+        div{
+            margin-top: 20px;
+        }
+        div input{
+            width: 100%;
+        }
+        .button{
+
+            width: 100%;
+            text-align: center;
+            border-radius: 5px;
+            background-color: red;
+            border: 1px solid #EFEFEF;
+            color: white;
+            height: 30px;
+        }
+        .regButton{
+            background-color: white;
+            border: 0px;
+            margin-top: 5px;
+
+        }
+    </style>
+    
+    <div class="content">
     <form action="/sessions" method="post">
-        <label for="">email</label>
+        <div>
+            <label for="">username</label><br/>
         <input type="text" name="email" >
-        <label for=""></label>
+        </div>
+        <div>
+            <label for="">password</label><br/>
         <input type="password" name="password" >
-        <button>login</button>
+        </div>
+        <div  >
+            <button class="button">login</button> 
+        </div>
+        
+        
+        
     </form>
         
     <form action="/users/new" >
-            <button>register new user</button>
+            <button class="regButton">register?</button>
     </form>
 
-    
+    </div>
 </body>
 </html>

@@ -7,20 +7,67 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>new item</h1>
+    <style>
+        body{
+            width: 800px;
+            margin: 0 auto;
+        }
+        div{
+            margin-top: 15px;
+        
+        }
+        div input{
+            width: 300px;
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid #a19f9f;
+            margin-top: 5px;
 
+        }
+        div button{
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border: 0px;
+            border-radius: 5px;
+        }
+
+    </style>
+    <h1>new item</h1>
+    
     <form action="/items" method="post">
-        <label for="">title</label>
-        <input type="text" name="title"/>
-        <label for="">describe</label>
-        <input type="text" name="describe"/>
-        <label for="">image_url</label>
-        <input type="text" name="image_url"/>
-        <label for="">price</label>
-        <input type="text" name="price"/>
-        <label for="">available quantity</label>
-        <input type="text" name="available">
-        <button>submit</button>
+        <div>        
+            <label for="">title</label><br>
+            <input type="text" name="title"/>
+        </div>
+
+        <div>
+            <label for="">describe</label><br>
+            <input type="text" name="describe"/>
+        </div>
+
+        <div>
+            <label for="">image_url</label><br>
+            <input type="text" name="image_url"/>
+        </div>
+
+        <div>
+            <label for="">price</label><br>
+            <input type="text" name="price"/>
+        </div>
+
+        <div>
+            <label for="">available quantity</label><br>
+            <input type="text" name="available">
+        </div>
+
+        <div>       
+            <button>submit</button>
+        </div>
+
+
+
+ 
 
     </form>
 

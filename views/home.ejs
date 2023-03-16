@@ -5,37 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/homestyle.css">
 </head>
+
+
 <body>
-    <h1>hello</h1>
+
     <header>
-        <form action="/sessions" method="post">
-            <label for="">email</label>
-            <input type="text" name="email" >
-            <label for=""></label>
-            <input type="password" name="password" >
-            <button>login</button>
-            </form>
-            
-        <form action="/users/new" >
-                <button>register new user</button>
-        </form>
-
-
-        <form action="/sessions" method="post">
-            <input type="hidden" name="_method" value="delete"/>
-            <button>log out</button>
-        </form>
-    </header>
-
+        <div class="welcome">hello welcome to healthy life store</div>
     
 
-    <a href="/items/new">add new stock</a>
+    <div>
+        <img src="" alt="">
+    </div>
+     <div class="loginbar">
+        <% if (!isLoggedIn()) {%>
+        <form action="/sessions" method="post">
+            <label for="">username</label>
+            <input type="text" name="email" >
+            <label for="">password</label>
+            <input type="password"  name="password" >
+            <button>login</button>
+        </form>
+            
+        <form action="/users/new" >
+                <button>register</button>
+        </form>
+        
+        <%}%>
+
+        <% if (isLoggedIn()) { %>
+        <form action="/sessions" method="post">
+            <input type="hidden" name="_method" value="delete"/>
+            <button> log out</button>
+        </form>
+        
+        <% if (!isAdminLoggedIn()){ %>
+        <form action="/orders" method="post">
+            <button>check out</button>
+        </form>
+        <%}%>
+        <%}%>
+
+        <% if (isAdminLoggedIn()) { %>
+            <a href="/sessions/admin">admin manager</a>
+            <a href="/items/new">add new stock</a>
+
+        <%}%>
+
+        
+        
+    </div>
+</header> 
+
+<div style="clear: both;"></div>
+        
+    
+
+        
     <section>
         <% for (let item of items){%>
             <div class="ui-card">
-                <a href="/items/<%= item.id%>"><%= item.title%></a>
-                <img src="<%= item.image_url%>" style="width: 400px; height: 320px;"/>
+                <a href="/items/<%= item.id%>"><%= item.title%>
+                <img src="<%= item.image_url%>" />
+                </a>
             </div>
         <% } %>
     </section>

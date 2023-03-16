@@ -7,31 +7,81 @@
     <title>Document</title>
 </head>
 <body>
-    <section class="dishes"> 
-    
-        <!-- <h2> user's email: <%=currentUser.email%></h2> -->
+    <style>
 
-        <form action="/sessions" method="post">
-            <input type="hidden" name="_method" value="delete"/>
-            <button>log out</button>
-        </form>
 
-        <form action="/users/<%=currentUser.id%>" method="post">
-            <input type="hidden" name="_method" value="delete" />
-                 <button>delete user</button>
-        </form>
-        <!-- <h2><%=currentUser.email%> regular orders are:</h2> -->
+        section {
+            margin: 0 auto;
+            padding: 20px 10px;
+            box-sizing: border-box;
+            position: relative;
+            max-width: 1200px;
+            /* background-color: #ECE9E9FF; */
+            font-size: large;
 
-    
-    <% for (let order of orders){%>
-
-        <div class="ui-card">
-            <a href="/items/<%= order.item_id% >"><%= order.order_type%></a>
-            <div><%=order.item_id%></div>
-            <p><%=order.item_quantity%></p>
-        </div>
+            display: grid;
+            grid-auto-rows: auto;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
             
+            text-align: center;
+
+            color: rgb(6, 245, 225);
+
+    }
+    .ui-card{
+        background-color: white;
+        margin: 10px;
+        padding: 10px;
+        box-shadow: 2px 2px 2px 2px #ccc;
+        /* width: 25%; */
+    
+    }
+    .ui-card img{
+        border-radius: 5px;
+        width: 100%;
+        margin-top: 15px;
+    
+    }
+    
+    .homepage{
+        width: 1200px;
+        margin: 0 auto;
+        font-size: x-large;
+    }
+
+    .title{
+        text-align: left;
+        color: #333;
+
+    }
+    .describe{
+        text-align: left;
+        color: #565555;
+        font-size: 16px;
+
+    }
+
+    </style>
+        <p class="homepage">following are the order details for order number <%=newOrderItems[0].orders_id%>: </p>
+
+    <section > 
+            
+     <% for (let orderItem of newOrderItems) { %>              
+           
+            
+
+
+            <div class="ui-card">
+                <img src="<%=orderItem.image_url%>" alt="">
+                <div class="title"><%=orderItem.title%></div>
+                <div class="describe"><%=orderItem.describe%></div>
+               
+               
+            </div>
+                    
     <% } %>
     </section>
+
+    
 </body>
 </html>

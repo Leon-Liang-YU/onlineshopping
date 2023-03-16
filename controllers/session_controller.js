@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const bcrypt = require('bcrypt')
 const session = require('express-session')
-const db=require("./../db")
+const db=require("./../database")
 
 router.get('/login',(req,res)=>{
 
@@ -10,11 +10,13 @@ router.get('/login',(req,res)=>{
 
 })
 
-
+router.get('/sessions/admin', (req, res)=>{
+    res.render('admin',{})
+})
 router.post('/sessions',(req, res)=>{
 
     // console.log(req.session)
-
+    req.session.cart=[]
     const email = req.body.email
 
     const password = req.body.password
@@ -31,32 +33,38 @@ router.post('/sessions',(req, res)=>{
             return
         }
     const user = dbRes.rows[0]
+    
 
         bcrypt.compare(password, user.password_digest,
             (err,result )=>{
 
                 if(result){
                     // req.session.email=user.email
-                    req.session.userId = user.id
-                    res.redirect('/')
+                    if(user.id==1){
+                        req.session.userId = user.id
+                        res.render('admin',{})
+                    }else{
+                        req.session.userId = user.id
+                        res.redirect('/')
+                    }
                 } else {
 
-                    res.render("login")
+                    res.redirect('/login')
                 }
-            })
+            }) 
+        
 
     })
 
 
-    // res.json(req.body)
+
 
 })
 
 router.delete("/sessions", (req, res)=>{
-    // req.session.userId=undefined
+
     
     req.session.destroy(()=>{
-        // console.log(req.session.userId)
 
         res.redirect("/login")
     })

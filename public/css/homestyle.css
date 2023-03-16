@@ -1,0 +1,140 @@
+*{
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+    /* background-image: url("https://res.cloudinary.com/dl9qzdngq/image/upload/v1678951404/cloudinary-tutorial/grfqyklo0rlovy5gh0na.jpg"); */
+    /* background-color: black; */
+    margin: 0px;
+    padding: 0px;
+   
+
+}
+
+body{
+    /* background-color: black; */
+    display: flexbox;
+    margin: 0 auto;
+    /* min-width: 800px; */ 
+    overflow: hidden;
+    
+    
+}
+
+body header{
+    margin: 0 auto;
+    background-color: #396AFC;
+    color: white;
+    padding: 15px 0px 15px 220px;
+   
+
+}
+.welcome{
+
+    font-size: xx-large;
+    color: rgb(6, 245, 225);
+    /* width: 50%; float: left; */
+}
+
+
+
+body header button{
+    
+    background-color: rgb(22, 21, 21);
+    height: 40px;
+    width: 140px;
+    border: none;
+    color:rgb(106, 103, 85);
+    text-align: center;
+    text-shadow: 30px;
+    text-decoration: none;
+    font-size: 25px;
+    margin: 15px 2px;
+    border-radius: 25px;
+}
+
+body header div input,label{
+
+    font-size:x-large;
+    color: rgb(45, 39, 3);
+
+}
+
+section {
+    margin: 0 auto;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    position: relative;
+    max-width: 1200px;
+    background-color: #ECE9E9FF;
+
+
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+    text-align: center;
+
+    color: rgb(6, 245, 225);
+
+
+    
+
+}
+
+section div a{
+
+    color:rgb(106, 103, 85);
+    
+}
+
+.ui-card{
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 2px #ccc;
+    /* width: 25%; */
+    
+}
+.ui-card img{
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 15px;
+    
+}
+
+.login {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .login-chil {
+    width: 400px;
+  }
+  
+  .username p, .password p {
+    margin: 0px;
+    padding-bottom: 5px;
+  }
+  
+  .username, .password, .button {
+    margin-top: 20px;
+  }
+  
+  .username input, .password input {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #a19f9f;
+    border-radius: 5px;
+  }
+  
+  .button {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
+    border-radius: 5px;
+    margin: 30px auto 0px auto;
+    background-color: #40E4E5;
+    color: #FFFFFF;
+  }
+  .register {
+    margin-top: 10px; cursor:pointer;
+  }

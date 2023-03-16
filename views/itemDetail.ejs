@@ -5,25 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .addButton{
+
+            background-color: red;
+            color: white;
+            border: 0px;
+            border-radius: 3px;
+        }
+        .removeBtn{
+            background-color: white;
+            border: 0px;
+            margin-top: 15px;
+        }
+        .content{
+            margin: 0 auto;
+            width: 800px;
+        }
+        body{
+
+            background-color: #40E4E5;
+        }
+    </style>
 </head>
 <body>
+   
+      <div class="content">  
+
     <h1>item details</h1>
+    <a href="/" style="font-size:x-large;">homepage</a>
     <p>
+        <img src="<%=item.image_url%>" alt=""/>
         <h3>product name: <%=item.title%></h3>
         <h3>product description: <%=item.describe%></h3>
         
         <h3>product price: $<%=item.price%></h3>
         <h3>stock available: <%=item.available%></h3>
-        <img src="<%=item.image_url%>" alt=""/>
+        <form action="/orders/<%=item.id%>/add" >
+            <button class="addButton">add to order</button>
+        </form>
+        <form action="/orders/<%=item.id%>/remove" >
+            <button class="removeBtn">remove</button>
+        </form>
+
+    </div>
+
+        
     </p>
 
-    <a href="/items/new">add new product</a>
-
+    
+    <% if (isAdminLoggedIn()){ %>
     <a href="/items/<%=item.id%>/edit">edit</a>
 
     <form action="/items/<%=item.id%>" method="post">
         <input type="hidden" name="_method" value="delete">
         <button>delete item</button>
     </form>
+    <%}%>
 </body>
 </html>

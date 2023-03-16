@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            width: 800px;
+            margin: 0 auto;
+
+        }
+        .ui-card{
+            text-align: center;
+            padding-bottom: 40px;
+        }
+        .ui-card a{
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .editBtn{
+            border: 0px;
+            border-radius: 5px;
+            background-color: red;
+            color: white;
+            margin-top: 15px;
+            width: 100px;
+            font-size: large;
+        }
+        .deleteBtn{
+            border: 0px;
+            border-radius: 5px;
+            background-color: white;
+
+            margin-top: 15px;
+            width: 120px;
+            font-size: large;
+
+        }
+
+
+
+    </style>
+    <section>
+        <% for (let user of users){%>
+            <div class="ui-card">
+                <a href="/users/<%= user.id%>/edit"><%= user.email%></a>
+                <form action="/users/<%= user.id%>/edit" >                 
+                    <button class="editBtn">edit</button>
+                </form>
+                <form action="/users/<%= user.id%>" method="post">
+                    <input type="hidden" name="_method" value="delete"/>
+                    <button class="deleteBtn">delete</button>
+                </form>
+
+        <% } %>
+    </section>
+</body>
+</html>
