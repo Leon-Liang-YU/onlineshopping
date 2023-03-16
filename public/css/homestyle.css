@@ -65,10 +65,10 @@ section {
     position: relative;
     max-width: 1200px;
     background-color: #ECE9E9FF;
-
+    text-decoration: none;
 
     display: grid;
-    grid-auto-rows: auto;
+    /* grid-auto-rows: auto; */
     grid-template-columns: 1fr 1fr 1fr 1fr;
     
     text-align: center;
@@ -100,15 +100,21 @@ section div a{
     margin-top: 15px;
     
 }
+.ui-card a{
+
+  text-decoration: none;
+}
 
 .login {
     width: 1200px;
     margin: 0 auto;
   }
   
-  .login-chil {
-    width: 400px;
-  }
+.currentuser{
+
+  font-size:x-large;
+  color: rgb(6, 245, 225);
+}
   
   .username p, .password p {
     margin: 0px;

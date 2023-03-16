@@ -67,6 +67,7 @@ router.post('/orders/:user_id/confirm', (req, res) => {
 
                 const newOrderItems = dbRes3.rows
                 // console.log(dbRes3.rows)
+                while (req.session.cart.length) { req.session.cart.pop(); }
                 res.render("userDetail", {newOrderItems: newOrderItems})
 
             })
@@ -112,7 +113,7 @@ router.get('/orders/:user_id/cancel', (req, res) => {
 
 })
 
-router.post('/orders', (req, res) => {
+router.get('/orders', (req, res) => {
     const orderLists = []
     let totalCharge = 0
     for (let listItem of req.session.cart) {

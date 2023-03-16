@@ -12,7 +12,7 @@
 <body>
 
     <header>
-        <div class="welcome">hello welcome to healthy life store</div>
+        <div class="welcome"> welcome to healthy life store</div>
     
 
     <div>
@@ -35,13 +35,14 @@
         <%}%>
 
         <% if (isLoggedIn()) { %>
-        <form action="/sessions" method="post">
-            <input type="hidden" name="_method" value="delete"/>
-            <button> log out</button>
-        </form>
+            <p class="currentuser">hello <%=currentUser.email%></p>
+            <form action="/sessions" method="post">
+                <input type="hidden" name="_method" value="delete"/>
+                <button> log out</button>
+            </form>
         
         <% if (!isAdminLoggedIn()){ %>
-        <form action="/orders" method="post">
+        <form action="/orders" >
             <button>check out</button>
         </form>
         <%}%>
@@ -58,7 +59,7 @@
     </div>
 </header> 
 
-<div style="clear: both;"></div>
+<!-- <div style="clear: both;"></div> -->
         
     
 

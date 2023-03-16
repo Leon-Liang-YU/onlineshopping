@@ -8,15 +8,17 @@
 </head>
 <body>
     <style>
-
+        body{
+            background-color:bisque;
+        }
 
         section {
             margin: 0 auto;
-            padding: 20px 10px;
+            padding: 100px 10px;
             box-sizing: border-box;
             position: relative;
             max-width: 1200px;
-            /* background-color: #ECE9E9FF; */
+            
             font-size: large;
 
             display: grid;
@@ -43,10 +45,12 @@
     
     }
     
-    .homepage{
-        width: 1200px;
+    .headtag{
+        font-weight: bold;
+        padding-top: 100px;
+        width: 1150px;
         margin: 0 auto;
-        font-size: x-large;
+        font-size: xx-large;
     }
 
     .title{
@@ -62,7 +66,8 @@
     }
 
     </style>
-        <p class="homepage">following are the order details for order number <%=newOrderItems[0].orders_id%>: </p>
+        <div><a href="/" style="font-size:x-large; margin-left: 200px;margin-top: 100px;">homepage</a></div>
+        <p class="headtag">following are the order details for order number <%=newOrderItems[0].orders_id%>: </p>
 
     <section > 
             
