@@ -14,7 +14,7 @@ body{
     display: flexbox;
     margin: 0 auto;
     /* min-width: 800px; */ 
-    overflow: hidden;
+    overflow-y: auto;
     
     
 }
