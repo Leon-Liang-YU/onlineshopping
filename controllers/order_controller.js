@@ -101,17 +101,17 @@ router.post('/orders/:user_id/confirm', (req, res) => {
 
 
 
-router.get('/orders/:user_id/cancel', (req, res) => {
-    // req.session.cart.splice(0)
-    // res.redirect('/')
-    // res.render("home")
-    // console.log(req.session.cart)
-    // res.redirect("/")
-    while (req.session.cart.length) { req.session.cart.pop(); }
-    res.redirect("/login")
+// router.get('/orders/:user_id/cancel', (req, res) => {
+//     // req.session.cart.splice(0)
+//     // res.redirect('/')
+//     // res.render("home")
+//     // console.log(req.session.cart)
+//     // res.redirect("/")
+//     while (req.session.cart.length) { req.session.cart.pop(); }
+//     res.redirect("/login")
 
 
-})
+// })
 
 router.get('/orders', (req, res) => {
     const orderLists = []
